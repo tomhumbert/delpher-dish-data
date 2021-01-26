@@ -25,6 +25,9 @@ dec3 <- artikels %>%
 dec2 <- artikels %>%
   filter(date > '1976-01-01' && date < '1986-01-01')
 
+# !!!
+# Code taken as proposed by Martin Schweinberger (http://www.martinschweinberger.de/blog/creating-word-clouds-with-r/)
+# !!!
 corp <- Corpus(VectorSource(dec3)) # Create a corpus from the vectors
 #corp <- tm_map(corp, stemDocument, language = "german") # stem words (inactive because I want intakt words)
 corp <- tm_map(corp, removePunctuation) # remove punctuation
